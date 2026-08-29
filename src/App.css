@@ -1,90 +1,476 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap");
+
+:root {
+  --bg: #eeeae5;
+  --paper: #f7f2e9;
+  --text: #75695e;
+  --dark: #74685f;
+  --gold: #a78f70;
+  --border: rgba(130, 112, 94, 0.18);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  background: #d9d9d9;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.wedding-page {
-  font-family: 'Playfair Display', serif; /* Font chữ sang trọng cho đám cưới */
-  color: #333;
-}
-
-.navbar {
+.page {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  padding: 20px 10%;
-  align-items: center;
-  background: #fff;
+  justify-content: center;
 }
 
-.navbar a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #555;
+.invitation {
+  width: 100%;
+  max-width: 620px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 0% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 40%
+    ),
+    linear-gradient(180deg, #f6f1e9 0%, #eee8df 100%);
+  padding: 35px 30px 50px;
+  overflow: hidden;
+}
+
+.section {
+  margin-bottom: 45px;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 50px 10%;
-  background-color: #fdf8f5; /* Màu nền kem nhẹ nhàng */
+  display: flex;
+  justify-content: center;
 }
 
-.hero-content h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.hero-photo-wrapper {
+  width: 72%;
+  position: relative;
+  padding: 10px;
+  background: #f8f6f1;
+  box-shadow: 0 10px 20px rgba(87, 73, 60, 0.15);
+  transform: rotate(-2deg);
 }
 
-.main-img {
+.hero-photo {
+  display: block;
   width: 100%;
-  border-radius: 15px; /* Bo góc ảnh cho mềm mại */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: 390px;
+  object-fit: cover;
 }
 
-.cta-button {
-  background-color: #d4a373; /* Màu vàng đồng sang trọng */
+.tape {
+  width: 120px;
+  height: 28px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(4deg);
+  background: rgba(205, 183, 143, 0.65);
+  z-index: 2;
+}
+
+.wax-seal {
+  position: absolute;
+  right: -25px;
+  bottom: 30px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #c4ad82;
+  border: 4px double #eadbbd;
   color: white;
-  padding: 12px 30px;
-  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+/* Couple */
+
+.couple-card,
+.event-card,
+.timeline-card,
+.guestbook {
+  position: relative;
+  max-width: 460px;
+  margin: 0 auto 45px;
+  padding: 38px 32px;
+  text-align: center;
+  background: rgba(248, 244, 237, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(99, 84, 70, 0.08);
+}
+
+.small-title,
+.gallery-section h3,
+.event-card h3,
+.location h3,
+.timeline-card h3,
+.guestbook h3 {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+
+.parents {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 18px;
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+.parents span,
+.parents strong {
+  display: block;
+}
+
+.parents strong {
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.divider {
+  width: 1px;
+  background: var(--border);
+}
+
+.intro {
+  margin: 28px 0;
+  font-size: 9px;
+  line-height: 1.9;
+}
+
+.couple-card h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.amp {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  margin: 8px;
+}
+
+.date-text {
+  font-size: 8px;
+  letter-spacing: 3px;
+  margin-top: 25px;
+}
+
+.leaf,
+.flower {
+  position: absolute;
+  font-size: 80px;
+  color: rgba(147, 132, 99, 0.65);
+}
+
+.leaf-left {
+  left: -48px;
+  bottom: 15px;
+  transform: rotate(-25deg);
+}
+
+.flower-right {
+  right: -35px;
+  bottom: 30px;
+  color: #b49561;
+}
+
+/* Gallery */
+
+.gallery-section {
+  max-width: 100%;
+  margin: 0 auto 45px;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.gallery-section h3 {
+  margin-bottom: 8px;
+}
+
+.gallery-section > p {
+  font-size: 10px;
+  color: var(--text);
+  margin-bottom: 25px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  auto-rows: 140px;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(99, 84, 70, 0.1);
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Event */
+
+.event-card h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.time {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  margin-bottom: 18px;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.date span {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.date strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 500;
+  padding: 0 12px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.year {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.lunar {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.calendar {
+  margin: 30px auto 15px;
+  max-width: 300px;
+  padding: 18px;
+  background: #7d7167;
+  color: #eee9e3;
   border-radius: 5px;
+}
+
+.calendar-title {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  font-size: 7px;
+}
+
+.weekdays {
+  margin-bottom: 12px;
+}
+
+.days span {
+  padding: 3px;
+}
+
+.active-day {
+  background: #eee8df;
+  color: #75695e;
+  border-radius: 50%;
+}
+
+.calendar-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 9px;
   cursor: pointer;
-  font-size: 1rem;
+}
+
+.leaf-event {
+  right: -42px;
+  bottom: 70px;
+}
+
+/* Map */
+
+.location {
+  text-align: center;
+  max-width: 460px;
+  margin: 0 auto 45px;
+}
+
+.location p {
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+.map {
+  margin-top: 20px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Timeline */
+
+.timeline {
+  margin-top: 25px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 9px;
+}
+
+.timeline-item span {
+  text-align: right;
+  padding-right: 18px;
+}
+
+.timeline-item p {
+  text-align: left;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* Guestbook */
+
+.guestbook form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guestbook input,
+.guestbook textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 10px;
+  outline: none;
+}
+
+.guestbook textarea {
+  resize: vertical;
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-bottom button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: #786d64;
+  color: white;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.thank-you {
+  font-size: 8px;
+  margin-top: 18px;
+}
+
+footer {
+  text-align: center;
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .invitation {
+    padding: 25px 18px 40px;
+  }
+
+  .hero-photo-wrapper {
+    width: 80%;
+  }
+
+  .hero-photo {
+    height: 330px;
+  }
+
+  .couple-card h1 {
+    font-size: 30px;
+  }
+
+  .couple-card,
+  .event-card,
+  .timeline-card,
+  .guestbook {
+    padding: 30px 20px;
+  }
 }
